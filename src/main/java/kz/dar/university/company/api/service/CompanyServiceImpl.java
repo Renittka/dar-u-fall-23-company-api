@@ -5,12 +5,13 @@ import kz.dar.university.company.api.domain.CompanyDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Service
 public class CompanyServiceImpl implements CompanyService {
 
-    private List<Company> companies = new ArrayList<>();
+    private HashMap<String, Company> companies = new HashMap();
 
     {
         List<String> employees = new ArrayList();
@@ -23,18 +24,17 @@ public class CompanyServiceImpl implements CompanyService {
                 .employees(employees)
                 .build();
 
-        companies.add(darU);
+        companies.put(darU.getId(), darU);
     }
 
     @Override
     public Company getCompany(String id) {
-        //return companies.get(id);
-        return null;
+        return companies.get(id);
     }
 
     @Override
     public List<Company> getCompanies() {
-        return companies;
+        return companies.values().stream().toList();
     }
 
     @Override

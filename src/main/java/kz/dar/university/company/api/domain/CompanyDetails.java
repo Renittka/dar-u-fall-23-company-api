@@ -14,6 +14,6 @@ import java.util.List;
 public class CompanyDetails {
 
     private String name;
-    private List<Employee> employees;
+    private List<EmployeeDTO> employees;
 
 }
