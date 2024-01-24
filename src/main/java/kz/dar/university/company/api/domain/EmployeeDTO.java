@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @Builder
 public class EmployeeDTO {
 
-    private String id;
     private String fullName;
     private String department;
     private String position;

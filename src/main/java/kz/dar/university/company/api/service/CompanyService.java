@@ -9,8 +9,12 @@ public interface CompanyService {
 
     Company getCompany(String id);
 
+    CompanyDetails getCompanyWithDetails(String id);
+
     List<Company> getCompanies();
 
     List<CompanyDetails> getCompaniesDetails();
+
+    List<CompanyDetails> getCompaniesDetailsByEmployeeIdList();
 
 }
